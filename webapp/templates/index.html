@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>iAssist</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <link href="{{ url_for('static', filename= 'style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../static/util.js"></script>
+</head>
+<body>
+    <div class="container py-5">
+        <header class="text-white text-center">
+            <h1 class="display-4">iAssist</h1>
+            <p class="lead mb-0">A Deep Learning App to assist differently abled people</p>
+        </header>
+        <div class="row py-4">
+            <div class="col-lg-6 mx-auto">
+                <form class="form-inline" action="{{ url_for('home') }}" method="post" enctype="multipart/form-data">
+                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                        
+                            <input id="upload" name="input_image" type="file" onchange="readURL(this);" class="form-control border-0">
+                            <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                            <div class="input-group-append">
+                                <label for="upload" class="btn btn-light m-0 rounded-pill px-4">
+                                    <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                                    <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                                </label>
+                            </div>
+                            <input type="submit" class="btn btn-primary px-3 rounded-pill">
+                    </div>
+                </form>
+
+
+                {% if predictions %} 
+                <div class="image-area mt-4">
+                    <img id="imageResult" src= "{{predictions['image']}}" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                    <p class="text-white text-center" ><i> {{predictions['caption']}}</p>
+                    <br> 
+                    <div class='audio-container' style="display: flex; justify-content: center; align-items: center;">
+                        <audio controls>
+                            <source src="{{predictions['sound']}}" type="audio/mpeg" >
+                        </audio>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
