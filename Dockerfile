@@ -5,7 +5,7 @@ RUN apt-get update -y && \
 
 RUN pip3 install --upgrade pip
 
-COPY ./webapp /app
+COPY ./app /app
 
 WORKDIR /app
 
