@@ -20,6 +20,8 @@ CHANNELS = 3
 START = "startseq" 
 STOP = "endseq"
 max_length = 194
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 
 def encode(img):
     inception = InceptionV3(weights = 'imagenet', input_shape = (WIDTH, HEIGHT, CHANNELS))
@@ -33,11 +35,11 @@ def encode(img):
     return feature_vector
 
 def generate_caption(photo):
-    with open('./models/word_to_index.pkl', 'rb') as f:
+    with open(APP_ROOT+'/models/word_to_index.pkl', 'rb') as f:
       wordtoidx = pickle.load(f)
-    with open('./models/index_to_word.pkl', 'rb') as f:
+    with open(APP_ROOT+'/models/index_to_word.pkl', 'rb') as f:
       idxtoword = pickle.load(f)
-    caption_model = load_model('./models/caption_model.hdf5')
+    caption_model = load_model(APP_ROOT+'/models/caption_model.hdf5')
 
     in_text = START
     for i in range(max_length):
@@ -55,12 +57,12 @@ def generate_caption(photo):
     return final
 
 def generate_caption_alt(image, beam_width = 3, alpha = 0.7,max_len = 38):
-    with open('./models/word_to_index.pkl', 'rb') as f:
+    with open(APP_ROOT+'/models/word_to_index.pkl', 'rb') as f:
       wordtoidx = pickle.load(f)
-    with open('./models/index_to_word.pkl', 'rb') as f:
+    with open(APP_ROOT+'/models/index_to_word.pkl', 'rb') as f:
       idxtoword = pickle.load(f)
     
-    caption_model = load_model('./models/model_weights.h5')
+    caption_model = load_model(APP_ROOT+'/models/model_weights.h5')
 
     l = [('<start>', 1.0)]
     for i in range(max_len):
