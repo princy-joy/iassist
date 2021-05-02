@@ -6,10 +6,11 @@ RUN apt-get update -y && \
 RUN pip3 install --upgrade pip
 
 COPY ./app /app
+COPY requirements.txt /tmp/
 
 WORKDIR /app
 
-RUN pip3 install -r ./requirements.txt -t /app
+RUN pip3 install -r /tmp/requirements.txt -t /app
 RUN pip3 install gevent -t /app --upgrade
 
 ENTRYPOINT [ "python3" ]
