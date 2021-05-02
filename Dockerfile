@@ -9,7 +9,7 @@ COPY ./app /app
 
 WORKDIR /app
 
-RUN pip3 install -r requirements.txt -t /app
+RUN pip3 install -r ./requirements.txt -t /app
 RUN pip3 install gevent -t /app --upgrade
 
 ENTRYPOINT [ "python3" ]
