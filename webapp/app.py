@@ -1,6 +1,7 @@
 from flask import Flask,render_template,redirect,request
 from gtts import gTTS
 import os
+import model_util
 
 app = Flask(__name__)
 
@@ -13,8 +14,8 @@ def home():
         input_image.save(image_path)
         audio_path = "./static/{}".format(input_image.filename) + ".mp3"
 
-        caption = 'model predict'
-        audio_out = gTTS(text = caption, lang = 'en',slow = False)
+        caption = model_util.caption_image(image_path)
+        audio_out = gTTS(text = caption, lang = 'en',slow = False, tld='co.uk')
         audio_out.save(audio_path)
 
         predictions = {
