@@ -40,7 +40,7 @@ with open(APP_ROOT+'/data/tokenizer.json') as f:
     data = json.load(f)
     tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(data)
 with open(APP_ROOT+'/data/img_vec_batch.txt', 'rb') as f:
-    img_name_batch = pickle.load(f)
+    img_vec_batch = pickle.load(f)
 with open(APP_ROOT+'/data/cap_batch.txt', 'rb') as f:
     cap_batch = pickle.load(f)
 with open(APP_ROOT+'/data/full_image_array.pkl', 'rb') as f:
@@ -87,9 +87,10 @@ def evaluate(image):
     for i in range(max_length):
         predictions, hidden, attention_weights = decoder(dec_input, features, hidden)
         predicted_id = tf.random.categorical(predictions, 1)[0][0].numpy()
-        result.append(tokenizer.index_word[predicted_id])
         if tokenizer.index_word[predicted_id] == '<end>':
-            return result, attention_plot
+            pred_caption = ''.join(result)
+            return pred_caption
+        result.append(tokenizer.index_word[predicted_id])
         dec_input = tf.expand_dims([predicted_id], 0)
     pred_caption = ''.join(result)
     return pred_caption
