@@ -50,8 +50,8 @@ class CNN_Encoder(tf.keras.Model):
         self.fc = tf.keras.layers.Dense(embedding_dim)
 
     def call(self, x):
-        x = self.dropout(x)
         x = self.fc(x)
+        x = self.dropout(x)
         x = tf.nn.relu(x)
         return x
 
@@ -61,23 +61,22 @@ class RNN_Decoder(tf.keras.Model):
         self.units = units
         self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim, weights=[embedding_matrix], mask_zero=True, trainable=False)
         # self.gru = tf.keras.layers.GRU(self.units,                                return_sequences=True, return_state=True,             recurrent_initializer='glorot_uniform')
-        self.lstm = tf.keras.layers.LSTM(self.units, return_sequences=True, return_state=True, recurrent_initializer='glorot_uniform')
+        self.lstm = tf.keras.layers.LSTM(self.units, return_sequences=True, return_state=True, recurrent_initializer='glorot_uniform', dropout=0.2)
         self.dropout = tf.keras.layers.Dropout(.5)
         self.batchnormalization = tf.keras.layers.BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001)
         self.fc1 = tf.keras.layers.Dense(self.units)
         self.fc2 = tf.keras.layers.Dense(vocab_size)
-
         self.attention = BahdanauAttention(self.units)
 
     def call(self, x, features, hidden):
         context_vector, attention_weights = self.attention(features, hidden)
         x = self.embedding(x)
-        x = self.dropout(x)
         x = tf.concat([tf.expand_dims(context_vector, 1), x], axis=-1)
         output, state_h, state_c = self.lstm(x)
         x = self.fc1(output)
-        x = self.batchnormalization(x)
         x = tf.reshape(x, (-1, x.shape[2]))
+        x = self.dropout(x)
+        x = self.batchnormalization(x)
         x = self.fc2(x)
         return x, state_h, attention_weights
 

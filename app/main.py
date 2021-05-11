@@ -2,7 +2,8 @@ from flask import Flask, redirect, url_for, request, render_template, Response, 
 from gtts import gTTS
 #from gevent.pywsgi import WSGIServer
 import os
-import model_util
+# import model_util
+import lstm_model_util as model_util
 
 app = Flask(__name__)
 
