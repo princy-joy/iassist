@@ -46,11 +46,10 @@ with open(APP_ROOT+'/data/cap_batch.txt', 'rb') as f:
 with open(APP_ROOT+'/data/full_image_array.pkl', 'rb') as f:
     full_image = pickle.load(f)
 
-def encodeImage(image_path):
+def encodeImage(img):
     incep_cnn = InceptionV3(weights='imagenet')
     incep_cnn = Model(incep_cnn.input, incep_cnn.layers[-2].output)
     preprocess_input = tensorflow.keras.applications.inception_v3.preprocess_input
-    img = tensorflow.keras.preprocessing.image.load_img(image_path, target_size=(HEIGHT, WIDTH))
     img = img.resize((WIDTH, HEIGHT), Image.ANTIALIAS)
     x = tensorflow.keras.preprocessing.image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
@@ -74,11 +73,11 @@ def initialize_model():
     decoder.load_weights(APP_ROOT+"/models/lstm_decoder_weights")
     return encoder, decoder
 
-def evaluate(image):
+def evaluate(image_path):
     encoder, decoder = initialize_model()
     attention_plot = np.zeros((max_length, attention_features_shape))
     hidden = decoder.reset_state(batch_size=1)
-    img = tensorflow.keras.preprocessing.image.load_img(image, target_size=(HEIGHT, WIDTH))
+    img = tensorflow.keras.preprocessing.image.load_img(image_path, target_size=(HEIGHT, WIDTH))
     img_encode = encodeImage(img)
     img_encode = tf.convert_to_tensor(img_encode, dtype=tf.float32)
     img_encode = tf.reshape(img_encode, (1, img_encode.shape[0]))
@@ -97,5 +96,4 @@ def evaluate(image):
     return pred_caption
 
 def caption_image(image_path):
-    encode_image = encodeImage(image_path)
-    return evaluate(encode_image)
+    return evaluate(image_path)
