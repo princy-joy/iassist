@@ -46,10 +46,11 @@ with open(APP_ROOT+'/data/cap_batch.txt', 'rb') as f:
 with open(APP_ROOT+'/data/full_image_array.pkl', 'rb') as f:
     full_image = pickle.load(f)
 
-def encodeImage(img):
+def encodeImage(image_path):
     incep_cnn = InceptionV3(weights='imagenet')
     incep_cnn = Model(incep_cnn.input, incep_cnn.layers[-2].output)
     preprocess_input = tensorflow.keras.applications.inception_v3.preprocess_input
+    img = tensorflow.keras.preprocessing.image.load_img(image_path, target_size=(HEIGHT, WIDTH))
     img = img.resize((WIDTH, HEIGHT), Image.ANTIALIAS)
     x = tensorflow.keras.preprocessing.image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
@@ -95,6 +96,6 @@ def evaluate(image):
     pred_caption = ''.join(result)
     return pred_caption
 
-def caption_image(img):
-    enc_img = encodeImage(img)
-    return evaluate(enc_img)
+def caption_image(image_path):
+    encode_image = encodeImage(image_path)
+    return evaluate(encode_image)
