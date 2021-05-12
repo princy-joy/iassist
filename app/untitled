@@ -1,0 +1,27 @@
+
+gcloud container clusters create iassist-cluster --num-nodes=1 --region=us-central1-c
+
+kubectl cluster-info
+
+kubectl get pods
+
+kubectl get service
+
+kubectl expose deployment gke-test --type=LoadBalancer --name=gke-test1 --port 80 --target-port 5000
+
+gcloud compute firewall-rules create test-node-port --allow tcp:80
+
+kubectl get deployments gke-test
+
+ kubectl describe services gke-test-service
+
+ kubectl get nodes --output wide
+
+ kubectl scale deployment gke-test --replicas=3
+
+ kubectl get service gke-test-service --output yaml
+
+
+------------------------------
+earlier commands
+
