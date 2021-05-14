@@ -17,6 +17,7 @@ Cloud Architecture and CI/CD Implementation
 ![cloud](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/cloud_arch.png)
 
 Tensorboard
+
 ![tensorboard](https://user-images.githubusercontent.com/46875754/118204491-2a2e7c80-b413-11eb-9b4c-63eed29991d8.jpg)
 
 
