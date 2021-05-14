@@ -12,6 +12,7 @@
 * Colab Model: [GRU](https://colab.research.google.com/drive/1-8b-RBw3_5EQcYAiuaRaA9Jj24uY22Vm?usp=sharing), [LSTM](https://colab.research.google.com/drive/1Oe8jIZMZZQo6bQWdfB2amtcYOHiFvOqj?usp=sharing)
 * [TFX Colab](https://colab.research.google.com/drive/1K2jCrFXGF6SqCcAtTtGl--7YHpjuJkqc?usp=sharing) 
 * [Webapp](http://34.69.77.57/)
+* [Proposal Document](https://docs.google.com/document/d/1CCbhHo6MqhH0uzABh3wmgHEAeBBBvWXxo0cbod4g8Zc/edit)
 
 Overview of Encoder-Decoder Model Architecture
 
