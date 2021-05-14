@@ -13,8 +13,10 @@ Deliverables:
 * Colab Model - [Vanilla Based](https://colab.research.google.com/drive/1P7rEVWxlTlP8YgQJGlajQwVcK55n2zR7?usp=sharing), [GRU](https://colab.research.google.com/drive/1-8b-RBw3_5EQcYAiuaRaA9Jj24uY22Vm?usp=sharing), [LSTM](https://colab.research.google.com/drive/1Oe8jIZMZZQo6bQWdfB2amtcYOHiFvOqj?usp=sharing)
 * [Flickr8k Dataset EDA](https://colab.research.google.com/drive/1GKeH-iIz_kf8Jal-PWAKMmhUGavVe4dT?usp=sharing)
 * [Proposal Document](https://docs.google.com/document/d/1CCbhHo6MqhH0uzABh3wmgHEAeBBBvWXxo0cbod4g8Zc/edit)
+* [Members Responsibilities](https://docs.google.com/document/d/11ZsR_8_WC8t1yW9f6PMmL8bO9QUrPch4o_-ivU3hvZU/edit?usp=sharing)
 
 Experiments:
+* [Model Tracker](https://docs.google.com/spreadsheets/d/1VbMC_GL8O9GxUB3ui934VhXeaLtrKatFQrs-JyZHR4I/edit?usp=sharing)
 * [TFX Colab](https://colab.research.google.com/drive/1K2jCrFXGF6SqCcAtTtGl--7YHpjuJkqc?usp=sharing) 
 * [AI Platform Experiment](https://github.com/princy-joy/iassist/blob/jocelyn-experiments/AI%20Platform%20deployment-Experiment1.ipynb)
 * [AI Platform TFX Pipeline Experiment](https://github.com/princy-joy/iassist/blob/jocelyn-experiments/Image%20Captioning%20TF%202.0-Experiment2.ipynb)
