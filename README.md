@@ -8,6 +8,7 @@
 
 Deliverables:
 * [Webapp](http://34.69.77.57/)
+* [In-depth Video Presentation](https://drive.google.com/file/d/1abDUYxMxKTgAmU0a8qSelGqTldjEDtM9/view?usp=sharing)
 * [Project Report](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/Report-Slides/Project%20Report-%20iAssist%20.pdf)
 * [Project Powerpoint](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/Report-Slides/258%20Project%20Presentation.pdf)
 * Colab Model - [Vanilla Based](https://colab.research.google.com/drive/1P7rEVWxlTlP8YgQJGlajQwVcK55n2zR7?usp=sharing), [GRU](https://colab.research.google.com/drive/1-8b-RBw3_5EQcYAiuaRaA9Jj24uY22Vm?usp=sharing), [LSTM](https://colab.research.google.com/drive/1Oe8jIZMZZQo6bQWdfB2amtcYOHiFvOqj?usp=sharing)
