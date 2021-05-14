@@ -1,5 +1,9 @@
 # iAssist Project Repository
 
+**CMPE 258 Deep Learning, Professor Vijay Eranti**
+
+**Team:** Deep Dreamer
+
 **Objective:** The goal of our application is to describe a scene in simple words to visually impaired people, just like a friend would if he or she was speaking to them. Our solution is a Encoder-Decoder deep learning algorithm that intake both image and text.
 
 * [Project Report](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/Project%20Report-%20iAssist%20.pdf)
