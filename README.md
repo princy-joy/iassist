@@ -10,14 +10,12 @@
 
 Overview of Encoder-Decoder Model Architecture
 
-![model](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/model_arch.png)
+![model_arch](https://user-images.githubusercontent.com/46875754/118204847-015ab700-b414-11eb-97cb-9effb248111e.png)
 
 Cloud Architecture and CI/CD Implementation
 
-![cloud](https://github.com/princy-joy/iassist/blob/main/Project%20artifacts/cloud_arch.png)
+![cloud_arch](https://user-images.githubusercontent.com/46875754/118204863-091a5b80-b414-11eb-94c6-0c3ecc4c6ca2.png)
 
 Tensorboard
 
 ![tensorboard](https://user-images.githubusercontent.com/46875754/118204491-2a2e7c80-b413-11eb-9b4c-63eed29991d8.jpg)
-
-
