@@ -11,6 +11,8 @@
 * [Colab Baseline model](https://colab.research.google.com/drive/1P7rEVWxlTlP8YgQJGlajQwVcK55n2zR7?usp=sharing)
 * Colab Model: [GRU](https://colab.research.google.com/drive/1-8b-RBw3_5EQcYAiuaRaA9Jj24uY22Vm?usp=sharing), [LSTM](https://colab.research.google.com/drive/1Oe8jIZMZZQo6bQWdfB2amtcYOHiFvOqj?usp=sharing)
 * [TFX Colab](https://colab.research.google.com/drive/1K2jCrFXGF6SqCcAtTtGl--7YHpjuJkqc?usp=sharing) 
+* [AI Platform Experiment](https://github.com/princy-joy/iassist/blob/jocelyn-experiments/AI%20Platform%20deployment-Experiment1.ipynb)
+* [AI Platform TFX Pipeline Experiment](https://github.com/princy-joy/iassist/blob/jocelyn-experiments/Image%20Captioning%20TF%202.0-Experiment2.ipynb)
 * [Webapp](http://34.69.77.57/)
 * [Proposal Document](https://docs.google.com/document/d/1CCbhHo6MqhH0uzABh3wmgHEAeBBBvWXxo0cbod4g8Zc/edit)
 
